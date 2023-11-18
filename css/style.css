@@ -1,0 +1,220 @@
+   
+    *{
+        /* border: 1px solid red; */
+    }
+
+    .theme-text-color{
+        color: #352C66;
+    }
+    .theme-bg-color{
+        background-color: #352C66;
+        color: #fff;
+    }
+    .theme-btn-outline{
+        border: 2px solid #352C66;
+        box-shadow: none;
+    }
+    .theme-font-size-8{
+        font-size: 0.8rem;
+    }
+
+
+    /* Start Navbar */
+    .navbar-before-scroll .nav-link, .navbar-before-scroll .navbar-toggler-icon {
+        color: #fff;
+    }
+
+    .navbar-after-scroll .nav-link, .navbar-after-scroll .navbar-toggler-icon {
+        color: #4f4f4f;
+    }
+    .navbar-after-scroll {
+        background-color: #fff;
+    }
+    .navbar-after-scroll {
+        transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+    }
+
+    .navbar-before-scroll {
+        transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+    }
+    .navbar.navbar-before-scroll.navbar-after-scroll {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    @media (max-width: 991.98px) {
+        #main-navbar {
+            background-color: #fff;
+        }
+
+        .nav-link, .navbar-toggler-icon {
+            color: #4f4f4f !important;
+        }
+    }
+    /* End Navbar */
+
+    @media (max-width: 667px) {
+        header .carousel-item img {
+            height: 45vh !important;
+        }
+        .w-50{
+            width: 100% !important;
+        }
+    }
+
+
+
+    .box-shadow{
+        -webkit-box-shadow: 0 1px 1px rgba(72,78,85,.6);
+        box-shadow: 0 1px 1px rgba(72,78,85,.6);
+        -webkit-transition: all .2s ease-out;
+        -moz-transition: all .2s ease-out;
+        -ms-transition: all .2s ease-out;
+        -o-transition: all .2s ease-out;
+        transition: all .2s ease-out;
+    }
+      
+    .box-shadow:hover{
+        -webkit-box-shadow: 0 20px 40px rgba(72,78,85,.6);
+        box-shadow: 0 20px 40px rgba(72,78,85,.6);
+        -webkit-transform: translateY(-15px);
+        -moz-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        -o-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+
+
+/* Start Slick Slider */
+  .slick-slider {
+    background: transparent;
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+        user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  .slick-list:focus {
+    outline: none;
+  }
+  .slick-list.dragging {
+    cursor: pointer;
+    cursor: hand;
+  }
+  .slick-slider .slick-track,
+  .slick-slider .slick-list {
+      -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+          -ms-transform: translate3d(0, 0, 0);
+          -o-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+  }
+  .slick-track {
+      position: relative;
+      top: 0;
+      left: 0;
+      display: block;
+  }
+  .slick-track:before,.slick-track:after {
+      display: table;
+      content: '';
+  }
+  .slick-track:after {
+      clear: both;
+  }
+  .slick-loading .slick-track {
+      visibility: hidden;
+  }
+  .slick-slide {
+      display: none;
+      float: left;
+      height: 100%;
+      min-height: 1px;
+  }
+  [dir='rtl'] .slick-slide {
+      float: right;
+  }
+  .slick-slide img {
+      display: block;
+  }
+  .slick-slide.slick-loading img {
+      display: none;
+  }
+  .slick-slide.dragging img {
+      pointer-events: none;
+  }
+  .slick-initialized .slick-slide {
+      display: block;
+  }
+  .slick-loading .slick-slide {
+      visibility: hidden;
+  }
+  .slick-vertical .slick-slide {
+      display: block;
+      height: auto;
+      border: 1px solid transparent;
+  }
+  .slick-arrow.slick-hidden {
+      display: none;
+  }
+  .slick-slider::before {
+    background: transparent;
+}  
+
+/* End Slick Slider */
+
+  div.is-quarter > div,
+  div.textarea {
+    position: relative;
+    margin-top: 2rem;
+  }
+  
+  input[type="text"], input[type="email"], textarea {
+    padding: 0.3rem 0 !important;
+    border: none !important;
+    border-bottom: 1px solid #352C66 !important;
+    box-shadow: 0 1px 0 0 #352C66 !important;
+  }
+  
+  div.is-quarter > div > label,
+  form > div.textarea > label {
+    position: absolute;
+  }
+  
+  label {
+    color: gray;
+    left: 0;
+    top: 0;
+    transition: 0.2s ease-out;
+    font-size: 1em;
+  }
+  
+  label.radio {
+    position: relative !important;
+  }
+  
+  label.active {
+    color: #352C66;
+    transform: translateY(-100%);
+    font-size: 0.85em;
+  }
+
+  .form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
