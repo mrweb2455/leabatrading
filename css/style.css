@@ -2,6 +2,20 @@
     *{
         /* border: 1px solid red; */
     }
+    .active a{
+        color: #FAC033 !important;
+    }
+    .bg-primary{
+        background-color: #352C66 !important;
+        color: #fff !important;
+    }
+    .text-primary{
+        color: #352C66;
+    }
+    .btn-primary{
+        color: #fff !important;
+        background-color: #352C66 !important;
+    }
 
     .theme-text-color{
         color: #352C66;
@@ -14,6 +28,10 @@
         border: 2px solid #352C66;
         box-shadow: none;
     }
+    .theme-btn{
+        color: #fff;
+        background-color: #352C66;
+    }
     .theme-font-size-8{
         font-size: 0.8rem;
     }
@@ -21,10 +39,10 @@
         top: 25%!important;
     }
     .h-75vh{
-        height: 75vh;
-        min-height: 75vh;
-        display: flex;
-        align-items: center;
+        height: 75vh !important;
+        min-height: 75vh !important;
+        display: flex !important;
+        align-items: center !important;
     }
 
 
@@ -202,54 +220,6 @@
 
 /* End Slick Slider */
 
-  div.is-quarter > div,
-  div.textarea {
-    position: relative;
-    margin-top: 2rem;
-  }
-  
-  input[type="text"], input[type="email"], textarea {
-    padding: 0.3rem 0 !important;
-    border: none !important;
-    border-bottom: 1px solid #352C66 !important;
-    box-shadow: 0 1px 0 0 #352C66 !important;
-  }
-  
-  div.is-quarter > div > label,
-  form > div.textarea > label {
-    position: absolute;
-  }
-  
-  label {
-    color: gray;
-    left: 0;
-    top: 0;
-    transition: 0.2s ease-out;
-    font-size: 1em;
-  }
-  
-  label.radio {
-    position: relative !important;
-  }
-  
-  label.active {
-    color: #352C66;
-    transform: translateY(-100%);
-    font-size: 0.85em;
-  }
-
-  .form-control:focus {
-    border-color: inherit;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
-
-
-
-
-
-
-
 
 
 
@@ -373,3 +343,14 @@
     -ms-transform: translate(0px, 0px);
     opacity: 1;
   }
+
+
+
+  .glass{
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}

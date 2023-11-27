@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Image Change</title>
+    <style>
+        /* Optional: Add some styles for better visual appearance */
+        img {
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+<!-- HTML element with an initial image -->
+<img id="myImage" src="img/slide1.png" alt="Initial Image" onmouseover="changeImage('img/slide1.png')">
+<img id="bg" src="img/slide2.png" alt="Initial Image">
+
+<script>
+    // JavaScript function to change the image source
+    function changeImage(x) {
+        // Get the image element by its ID
+        var imageElement = document.getElementById("bg");
+
+        // Define the new image source
+        // var newImageSource = "img/slide2.png";
+        console.log(x)
+        // Change the image source
+        imageElement.src = x;
+        // imageElement.src = newImageSource;
+    }
+</script>
+
+</body>
+</html>
