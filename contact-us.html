@@ -17,7 +17,62 @@
 
     <!-- particlesjs -->
     <link rel="stylesheet" media="screen" href="vendor/particles.js/css/style.css">
-    
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+    var markers = [
+    {
+        "title": 'Dhaka Bangladesh',
+        "lat": '23.8041',
+        "lng": '90.4152',
+        "description": 'Aksa Beach is a popular beach and a vacation spot in Aksa village at Malad, Mumbai.'
+    },
+    {
+        "title": 'Juhu Beach',
+        "lat": '40.7128',
+        "lng": '74.0060',
+        "description": 'Juhu Beach is one of favourite tourist attractions situated in Mumbai.'
+    },
+    {
+        "title": 'Girgaum Beach',
+        "lat": '18.9542149',
+        "lng": '72.81203529999993',
+        "description": 'Girgaum Beach commonly known as just Chaupati is one of the most famous public beaches in Mumbai.'
+    },
+    ];
+    window.onload = function () {
+        LoadMap();
+    }
+    function LoadMap() {
+        var mapOptions = {
+            center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
+            zoom: 2,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+
+        //Create and open InfoWindow.
+        var infoWindow = new google.maps.InfoWindow();
+
+        for (var i = 0; i < markers.length; i++) {
+            var data = markers[i];
+            var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title: data.title
+            });
+
+            //Attach click event to the marker.
+            (function (marker, data) {
+                google.maps.event.addListener(marker, "click", function (e) {
+                    //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
+                    infoWindow.setContent("<div style = 'width:200px;min-height:40px'>" + data.description + "</div>");
+                    infoWindow.open(map, marker);
+                });
+            })(marker, data);
+        }
+    }
+</script>
   </head>
   <body>
   
@@ -41,7 +96,7 @@
                     <div class="collapse navbar-collapse justify-content-end" id="navbarExample01">
                         <ul class="navbar-nav mb-2 flex-row">
                             <li class="nav-item dropdown dropdown-hover position-static active">
-                                <a href="#" class="nav-link dropdown-toggle" aria-current="page" id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">Company</a>
+                                <a href="#" class="nav-link dropdown-toggle" aria-current="page" id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">Career</a>
                                 <div class="dropdown-menu mt-0" aria-labelledby="navbarDropdown" style="border-top-left-radius: 0; border-top-right-radius: 0;">
                                     <div class="list-group list-group-flush">
                                         <a href="" class="list-group-item list-group-item-action">Dolor sit</a>
@@ -102,7 +157,7 @@
                                     </div>
                                 </div>
                             </li>
-                            
+                              
                             <li class="nav-item px-2">
                                 <a class="btn btn-warning btn-rounded" href="#" >Tracking </a>
                             </li>
@@ -118,130 +173,115 @@
                     </div>
                 </div>
             </nav>
-        </header>
+  
+            <div class="p-5 text-center bg-image" style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/041.webp');height: 400px;">
+                <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+                <div class="d-flex justify-content-center align-items-center h-100">
+                    <div class="text-white">
+                        <h1 class="mb-3 text-uppercase">Contact Us</h1>
+                    </div>
+                </div>
+                </div>
+            </div>
+  </header>
 
   <main>
-    <section>
-        <div class="p-5 text-center bg-image" style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/041.webp'); height: 18rem;">
-            <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
-                <div class="d-flex justify-content-center align-items-center h-100">
-                    <div class="pt-5 mt-5 pt-md-0 mt-md-0 text-white">
-                        <h1 class="mb-3 text-uppercase">Testimonial</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section style="background-color: aliceblue;">
-        <div class="container py-md-3">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-10">
-                    <nav data-mdb-navbar-init class="navbar navbar-expand-lg bg-body-tertiary my-3 p-3 rounded-7">
-                        <style>
-                            .breadcrumb-item+.breadcrumb-item::before {
-                                content: var(--mdb-breadcrumb-divider, ">>") !important;
-                            }
-                        </style>
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#"><i class="fa-solid fa-house"></i></a></li>
-                            <li class="breadcrumb-item"><a href="#">Company</a></li>
-                            <li class="breadcrumb-item active" aria-current="page"><a href="#">Testimonial</a></li>
-                            </ol>
-                        </nav>
-                    </nav>
+        <div class="container py-5">
+            <div class="row justify-content-center align-items-center glass">          
+               <div class="col-md-4">
+                    <div class="text-center">
+                        <ul class="list-unstyled mb-0">
+                            <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                                <p>San Francisco, CA 94126, USA</p>
+                            </li>
+            
+                            <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                                <p>+ 01 234 567 89</p>
+                            </li>
+            
+                            <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                                <p>info@logiprowp.com</p>
+                            </li>
+                            <li><i class="fas fa-clock mt-4 fa-2x"></i>
+                                <p>Mon-Sat : 08:00-20:00</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+               <div class="col-md-7">
+                    <form>
+                        <div class="row d-flex justify-content-center p-5 m-auto">
+                            <div class="mb-2">
+                                <h1 class="theme-text-color">Write to Us</h1>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-outline my-2" data-mdb-input-init>
+                                    <input type="text" id="name" class="form-control" />
+                                    <label class="form-label" for="name">Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-outline my-2" data-mdb-input-init>
+                                    <input type="text" id="company" class="form-control" />
+                                    <label class="form-label" for="company">Company</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-outline my-2" data-mdb-input-init>
+                                    <input type="text" id="location" class="form-control" />
+                                    <label class="form-label" for="location">Location</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-outline my-2" data-mdb-input-init>
+                                    <input type="text" id="city" class="form-control" />
+                                    <label class="form-label" for="city">City</label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-outline my-2" data-mdb-input-init>
+                                    <input type="text" id="state" class="form-control" />
+                                    <label class="form-label" for="state">State/Province</label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-outline my-2" data-mdb-input-init>
+                                    <input type="text" id="address" class="form-control" />
+                                    <label class="form-label" for="address">Address</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-outline my-2" data-mdb-input-init>
+                                    <input type="text" id="phone" class="form-control" />
+                                    <label class="form-label" for="phone">Your phone</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-outline my-2" data-mdb-input-init>
+                                    <input type="email" id="email" class="form-control" />
+                                    <label class="form-label" for="email">Your EMail</label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-outline my-2" data-mdb-input-init>
+                                    <textarea class="form-control" id="essage" rows="4"></textarea>
+                                    <label class="form-label" for="message">Message</label>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4 text-center">
+                                <button type="submit" class="btn theme-btn btn-lg btn-rounded w-50">Send</button>
+                            </div>
+                        </div>
+                    </form>
+               </div>
+               <div class="col-md-12">
+                <div id="dvMap" style="width: 100%; height: 70vh">
+               </div>
             </div>
         </div>
     </section>
-
-        <section style="background-color: aliceblue;">
-            <div class="container py-md-3">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-md-8 mb-4">
-                        <div class="card">
-                            <div class="card-body m-3">
-                                <div class="row">
-                                    <div class="col-lg-4 d-flex justify-content-center align-items-center mb-4 mb-lg-0">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20%2810%29.webp" class="rounded-circle img-fluid shadow-1" alt="woman avatar" width="200" height="200" />
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <p class="text-muted fw-light mb-4">
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente
-                                            molestiae numquam quas, voluptates omnis nulla ea odio quia similique
-                                            corrupti magnam.
-                                        </p>
-                                        <p class="fw-bold lead mb-2"><strong>Anna Smith</strong></p>
-                                        <p class="fw-bold text-muted mb-0">Product manager</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-8 mb-4">
-                        <div class="card">
-                            <div class="card-body m-3">
-                                <div class="row">
-                                    <div class="col-lg-4 d-flex justify-content-center align-items-center mb-4 mb-lg-0">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20%2810%29.webp" class="rounded-circle img-fluid shadow-1" alt="woman avatar" width="200" height="200" />
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <p class="text-muted fw-light mb-4">
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente
-                                            molestiae numquam quas, voluptates omnis nulla ea odio quia similique
-                                            corrupti magnam.
-                                        </p>
-                                        <p class="fw-bold lead mb-2"><strong>Anna Smith</strong></p>
-                                        <p class="fw-bold text-muted mb-0">Product manager</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-8 mb-4">
-                        <div class="card">
-                            <div class="card-body m-3">
-                                <div class="row">
-                                    <div class="col-lg-4 d-flex justify-content-center align-items-center mb-4 mb-lg-0">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20%2810%29.webp" class="rounded-circle img-fluid shadow-1" alt="woman avatar" width="200" height="200" />
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <p class="text-muted fw-light mb-4">
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente
-                                            molestiae numquam quas, voluptates omnis nulla ea odio quia similique
-                                            corrupti magnam.
-                                        </p>
-                                        <p class="fw-bold lead mb-2"><strong>Anna Smith</strong></p>
-                                        <p class="fw-bold text-muted mb-0">Product manager</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-8 mb-4">
-                        <div class="card">
-                            <div class="card-body m-3">
-                                <div class="row">
-                                    <div class="col-lg-4 d-flex justify-content-center align-items-center mb-4 mb-lg-0">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20%2810%29.webp" class="rounded-circle img-fluid shadow-1" alt="woman avatar" width="200" height="200" />
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <p class="text-muted fw-light mb-4">
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente
-                                            molestiae numquam quas, voluptates omnis nulla ea odio quia similique
-                                            corrupti magnam.
-                                        </p>
-                                        <p class="fw-bold lead mb-2"><strong>Anna Smith</strong></p>
-                                        <p class="fw-bold text-muted mb-0">Product manager</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
   </main>
 
